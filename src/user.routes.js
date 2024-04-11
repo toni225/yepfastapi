@@ -6,7 +6,9 @@ const FileUpload = require("express-fileupload");
 router.use(FileUpload());
 
 router.post("/webhooktest", async function (req, res) {
-  const data = await req.json();
+  const request = await req.body;
+
+  data = request;
 
   return res.json({
     message: "hola",
