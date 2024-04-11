@@ -10,7 +10,7 @@ router.post("/webhooktest", async function (req, res) {
 
   data = request;
 
-  return res.json({
+  res.status(200).send({
     message: "hola",
     data,
   });
@@ -19,7 +19,7 @@ router.post("/webhooktest", async function (req, res) {
 router.get("/webhooktest", async function (req, res) {
   const data = { eeee: "eeee" };
 
-  return res.json({
+  res.status(200).send({
     message: "hola",
     data,
   });
