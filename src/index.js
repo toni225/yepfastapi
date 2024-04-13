@@ -44,9 +44,10 @@ const getUser = (username) => {
 // app.get("/socket.io/socket.io.js", (req, res) => {
 //   res.sendFile(__dirname + "/node_modules/socket.io/client-dist/socket.io.js");
 // });
-app.get("/socket.io/socket.io.js", (req, res) => {
-  res.sendFile(__dirname + "/node_modules/socket.io/client-dist/socket.io.js");
-});
+app.use(
+  "/socket.io",
+  express.static(__dirname + "/node_modules/socket.io/client-dist")
+);
 
 io.on("connection", (socket) => {
   console.log("a user connected");
