@@ -17,8 +17,13 @@ const io = new Server(server, {
     // origin: "http://localhost:3000",
     origin: "https://yepfast.vercel.app",
   },
-  path: "/socket",
-  addTrailingSlash: false,
+  reconnectionDelay: 1000,
+  reconnection: true,
+  reconnectionAttemps: 10,
+  transports: ["websocket"],
+  agent: false,
+  upgrade: false,
+  rejectUnauthorized: false,
 });
 
 app.use(compression());
