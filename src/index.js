@@ -31,10 +31,10 @@ app.use("/v1/user", userRoutes);
 //     __dirname + "/node_modules/socket.io/client-dist/socket.io.min.js"
 //   );
 // });
-// app.use(
-//   "/socket.io",
-//   express.static(__dirname + "/node_modules/socket.io/client-dist")
-// );
+app.use(
+  "/socket.io/",
+  express.static(__dirname + "/node_modules/socket.io/client-dist")
+);
 
 let onlineUsers = [];
 
