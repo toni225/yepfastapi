@@ -26,6 +26,14 @@ app.use(cors());
 
 app.use("/v1/user", userRoutes);
 
+// app.get("/socket.io/socket.io.js", (req, res) => {
+//   res.sendFile(__dirname + "/node_modules/socket.io/client-dist/socket.io.js");
+// });
+app.use(
+  "/socket.io",
+  express.static(__dirname + "/node_modules/socket.io/client-dist")
+);
+
 let onlineUsers = [];
 
 const addNewUser = (username, socketId) => {
@@ -40,14 +48,6 @@ const removeUser = (socketId) => {
 const getUser = (username) => {
   return onlineUsers.find((user) => user.username === username);
 };
-
-// app.get("/socket.io/socket.io.js", (req, res) => {
-//   res.sendFile(__dirname + "/node_modules/socket.io/client-dist/socket.io.js");
-// });
-app.use(
-  "/socket.io",
-  express.static(__dirname + "/node_modules/socket.io/client-dist")
-);
 
 io.on("connection", (socket) => {
   console.log("a user connected");
