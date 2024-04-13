@@ -17,7 +17,6 @@ const io = new Server(server, {
     // origin: "http://localhost:3000",
     origin: "https://yepfast.vercel.app",
   },
-  path: "https://yepfast.vercel.app/socket",
 });
 
 app.use(compression());
