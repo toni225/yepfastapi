@@ -26,7 +26,7 @@ app.use(cors());
 
 app.use("/v1/user", userRoutes);
 
-app.get("/socket.io/socket.io.js", (req, res) => {
+app.get("/socket.io", (req, res) => {
   res.sendFile(__dirname + "/node_modules/socket.io/client-dist/socket.io.js");
 });
 // app.use(
