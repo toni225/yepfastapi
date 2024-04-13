@@ -1,7 +1,7 @@
 import express from "express";
 import { Server } from "socket.io";
-import { createServer } from "https";
-// import { createServer } from "http";
+// import { createServer } from "https";
+import { createServer } from "http";
 
 import userRoutes from "./user.routes";
 import helmet from "helmet";
@@ -17,6 +17,8 @@ const io = new Server(server, {
     // origin: "http://localhost:3000",
     origin: "https://yepfast.vercel.app",
   },
+  path: "/api/socket",
+  addTrailingSlash: false,
 });
 
 app.use(compression());
