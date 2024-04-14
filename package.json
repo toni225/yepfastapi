@@ -30,6 +30,7 @@
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.23.5",
     "@babel/register": "^7.22.15",
-    "ava": "^5.3.1"
+    "ava": "^5.3.1",
+    "nodemon": "^3.1.0"
   }
 }
