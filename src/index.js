@@ -8,6 +8,8 @@ import helmet from "helmet";
 import cors from "cors";
 import compression from "compression";
 
+import socketio from "./socket.io";
+
 const app = express();
 const port = 4000;
 const server = createServer(app);
@@ -36,8 +38,8 @@ app.use("/v1/user", userRoutes);
 //   express.static(__dirname + "/node_modules/socket.io/client-dist")
 // );
 // app.use("/socket.io/", express.static(__dirname + "/src/socket.io.js"));
-app.get("/socket.io", (req, res) => {
-  res.sendFile(__dirname + "/src/socket.io.js");
+app.get("/socket.io/", (req, res) => {
+  res.sendFile(socketio);
 });
 
 let onlineUsers = [];
