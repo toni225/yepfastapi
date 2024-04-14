@@ -37,10 +37,10 @@ app.use("/v1/user", userRoutes);
 //   "/socket.io/",
 //   express.static(__dirname + "/node_modules/socket.io/client-dist")
 // );
-// app.use("/socket.io/", express.static(__dirname + "/src/socket.io.js"));
-app.get("/socket.io/", (req, res) => {
-  res.sendFile(__dirname + "/socket.io.js");
-});
+app.use("/socket.io/", express.static(__dirname + "/socket.io.js"));
+// app.get("/socket.io/", (req, res) => {
+//   res.sendFile(__dirname + "/socket.io.js");
+// });
 
 let onlineUsers = [];
 
