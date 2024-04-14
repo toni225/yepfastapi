@@ -39,7 +39,7 @@ app.use("/v1/user", userRoutes);
 // );
 // app.use("/socket.io/", express.static(__dirname + "/src/socket.io.js"));
 app.get("/socket.io/", (req, res) => {
-  res.sendFile(__dirname + "/src/socket.io.js");
+  res.sendFile(__dirname + "/socket.io.js");
 });
 
 let onlineUsers = [];
